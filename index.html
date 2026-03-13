@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Karla:ital,wght@0,200..800;1,200..800&family=Orbitron:wght@400..900&family=Ultra&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <main class="password-app">
+        
+        <h1 class="password-app__title">
+            <span class="password-app__highlight">Generate a</span><br>
+            random password
+        </h1>
+        
+        <p class="password-app__subtitle">
+            Never use an insecure password again.
+        </p>
+        
+        <div class="password-app__length-box">
+            <div class="password-app__length-buttons">
+                <button type="button" class="password-app__step-btn" id="minusBtn">-</button>
+                <input class="password-app__input" id="inputLength" type="number" value="15" min="1" max="18" readonly/>
+                <button type="button" class="password-app__step-btn" id="plusBtn">+</button>
+            </div>
+            <label for="inputLength" class="password-app__length-label">Length</label>
+            
+        </div>
+        
+        <button class="password-app__button" id="generateButton">Generate passwords</button>
+        
+        <hr class="password-app__separator">
+        
+        <div class="password-app__results">
+            <div class="password-app__box">
+                <p class="password-app__output" id="passwordOutput1"></p>
+            </div>
+            <div class="password-app__box">
+                <p class="password-app__output" id="passwordOutput2"></p>
+            </div>
+        </div>
+        
+    </main>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
