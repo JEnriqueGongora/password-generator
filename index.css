@@ -1,155 +1,232 @@
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    /*--font-principal: "Karla";
+  /*--font-principal: "Karla";
     --text: #a5b4c7;
     --background: #1F2937;
     --primary: #8dafd8;
     --secondary: #2a4971;
     --accent: #10B981;*/
-    
-    --text: #e6f3da;
-    --background: #232e1b;
-    --primary: #addc8b;
-    --secondary: #486a30;
-    --accent: #cea844;
 
-    
+  --text: hsl(143, 25%, 94%);
+  --background: hsl(140, 20%, 3%);
+  --primary: hsl(142, 27%, 71%);
+  --secondary: hsl(209, 26%, 31%);
+  --accent: hsl(145, 34%, 51%);
 }
 
 body {
-    min-width: 100vw;
-    min-height: 100vh;
-    background-color: var(--background);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Karla";
 }
 
 .password-app {
-    width: 35rem;
-    min-height: 35rem;
-    border: 1px solid var(--accent);
-    border-radius: 0.3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 7.2rem 3.3rem;
+  width: 35rem;
+  min-height: 35rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 7.2rem 3.3rem 6.2rem;
 }
 
 .password-app__title {
-    color: white;
-    font-weight: bolder;
-    font-size: 2.5rem;
-    margin: 0;
+  color: white;
+  font-weight: bolder;
+  font-size: 2.5rem;
+  margin: 0;
 }
 
 .password-app__highlight {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 .password-app__subtitle {
-    color: var(--text);
-    font-style: italic;
-    margin: 0.6rem 0 3.2rem 0;
+  color: var(--text);
+  font-style: italic;
+  margin: 0.6rem 0 3.2rem 0;
 }
 
-.password-app__length-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--accent);
+.password-app__options-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0 1rem 0;
 }
 
-.password-app__length-buttons {
+.password-app__option-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent);
+}
+
+.password-app__length-btns-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .password-app__input {
-    text-align: center;
-    color: var(--accent);
-    font-weight: 900;
-    font-size: 1.5rem;
-    min-height: 3rem;
-    min-width: 4rem;
-    background-color: transparent;
-    border: 1px solid var(--accent);
-    border-radius: 0.3rem;
-    margin: 0 1rem;
+  display: inline-block;
+  text-align: center;
+  color: var(--accent);
+  font-weight: 900;
+  font-size: 1.5rem;
+  min-height: 4rem;
+  min-width: 4rem;
+  background-color: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  margin: 0 1rem;
 }
 
 .password-app__input:focus {
-    outline: none;
+  outline: none;
 }
 
 .password-app__step-btn {
-    min-width: 1rem;
-    background-color: transparent;
-    color: var(--accent);
-    line-height: 0;
-    font-size: 2rem;
-    border: none;
-    cursor: pointer;
+  min-width: 1rem;
+  background-color: transparent;
+  color: var(--accent);
+  line-height: 0;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
 }
 
-.password-app__step-btn:focus{
-    outline: none;
+.password-app__step-btn:focus {
+  outline: none;
 }
 
-.password-app__length-label {
-    margin: 1rem 0 0 0;
+.password-app__step-btn:hover {
+  color: color-mix(in srgb, var(--accent), black 30%);
 }
 
-.password-app__button {
-    color: white;
-    background-color: var(--accent);
-    width: 12rem;
-    height: 2.6rem;
-    border: none;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    margin: 2rem 0 0 0;
+.password-app__label {
+  margin: 1rem 0 0 0;
 }
 
-.password-app__button:hover {
-    background-color: ;
+.toggle-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 4rem;
+  min-width: 4rem;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  cursor: pointer;
+
+  color: var(--secondary); /* Grey text when off */
+  border: 1px solid var(--secondary); /* Grey border when off */
+  transition: all 0.2s ease;
+}
+
+.toggle-btn:hover {
+  color: color-mix(in srgb, var(--secondary), black 30%);
+  border: 1px solid color-mix(in srgb, var(--secondary), black 30%);
+}
+
+.toggle-text::after {
+  content: "off";
+}
+
+.checkbox-hidden {
+  display: none;
+}
+
+.checkbox-hidden:checked + .toggle-text::after {
+  content: "on";
+}
+
+.toggle-btn:has(.checkbox-hidden:checked) {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.toggle-btn:has(.checkbox-hidden:checked):hover {
+  color: color-mix(in srgb, var(--accent), black 30%);
+  border-color: color-mix(in srgb, var(--accent), black 30%);
+}
+
+.password-app__generate-btn {
+  font-size: 1rem;
+  color: var(--background);
+  background-color: var(--accent);
+  width: 12rem;
+  height: 2.6rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin: 2rem 0 0 0;
+}
+
+.password-app__generate-btn:hover {
+  background-color: color-mix(in srgb, var(--accent), black 30%);
 }
 
 .password-app__separator {
-    width: 100%;
-    height: 0.1rem;
-    background-color: var(--secondary);
-    border: none;
-    margin: 2rem 0;
+  width: 100%;
+  height: 0.1rem;
+  background-color: var(--secondary);
+  border: none;
+  margin: 2rem 0;
 }
 
 .password-app__results {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 1.5rem;
-    
-    
+  width: 100%;
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1.5rem;
 }
 
-.password-app__box {
-    background: var(--secondary);
-    width: 13rem;
-    min-height: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.3rem;
-    padding: 0.5rem 1rem;
+.password-app__result-cards-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.password-app__result-card {
+  background: var(--secondary);
+  width: 13rem;
+  min-height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
 }
 
 .password-app__output {
-    color: var(--accent);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.alert-message {
+  color: var(--text);
+  font-size: 1rem;
+  height: 1rem;
 }
 
 /* Quita las flechas por completo en Chrome, Safari, Edge y Opera */
