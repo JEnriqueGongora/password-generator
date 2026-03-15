@@ -21,6 +21,11 @@
   --accent: hsl(145, 34%, 51%);
 }
 
+html {
+  /* clamp(mínimo, ideal, máximo) */
+  font-size: clamp(70%, 1.5vh, 100%);
+}
+
 body {
   min-width: 100vw;
   min-height: 100vh;
@@ -34,7 +39,7 @@ body {
 .password-app {
   width: 35rem;
   min-height: 35rem;
-  border: 1px solid var(--accent);
+  border: 0.1rem solid var(--accent);
   border-radius: 0.3rem;
   display: flex;
   flex-direction: column;
@@ -91,7 +96,7 @@ body {
   min-height: 4rem;
   min-width: 4rem;
   background-color: transparent;
-  border: 1px solid var(--accent);
+  border: 0.1rem solid var(--accent);
   border-radius: 50%;
   margin: 0 1rem;
 }
@@ -128,7 +133,7 @@ body {
   align-items: center;
   min-height: 4rem;
   min-width: 4rem;
-  border: 1px solid var(--accent);
+  border: 0.1rem solid var(--accent);
   border-radius: 50%;
   font-weight: 900;
   font-size: 1.5rem;
@@ -136,13 +141,13 @@ body {
   cursor: pointer;
 
   color: var(--secondary); /* Grey text when off */
-  border: 1px solid var(--secondary); /* Grey border when off */
+  border: 0.1rem solid var(--secondary); /* Grey border when off */
   transition: all 0.2s ease;
 }
 
 .toggle-btn:hover {
   color: color-mix(in srgb, var(--secondary), black 30%);
-  border: 1px solid color-mix(in srgb, var(--secondary), black 30%);
+  border: 0.1rem solid color-mix(in srgb, var(--secondary), black 30%);
 }
 
 .toggle-text::after {
