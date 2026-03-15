@@ -120,7 +120,6 @@ minusBtnEl.addEventListener("click", function () {
     inputLengthEl.textContent = inputLengthEl.value;
   } else if (inputLengthEl.value < 1) {
     inputLengthEl.value = 0;
-    inputLengthEl.textContent = inputLengthEl.value;
   }
 });
 
@@ -130,7 +129,6 @@ plusBtnEl.addEventListener("click", function () {
     inputLengthEl.textContent = inputLengthEl.value;
   } else if (inputLengthEl.value > maxLength) {
     inputLengthEl.value = maxLength;
-    inputLengthEl.textContent = inputLengthEl.value;
   }
 });
 
@@ -166,23 +164,7 @@ function toggleStateVerifier(characterType) {
   }
 }
 
-function generateBothPasswords(length) {
-  passwordOutput1El.textContent = generatePassword(length);
-  passwordOutput2El.textContent = generatePassword(length);
-}
-
-function generatePassword(length) {
-  //dont't let the user go for more than set up max//
-  if (length > 18) {
-    length = 18;
-    inputLengthEl.value = 18;
-    inputLengthEl.textContent = 18;
-  } else if (length < 1) {
-    length = 1;
-    inputLengthEl.value = 1;
-    inputLengthEl.textContent = 1;
-  }
-  let password = "";
+function getCharactersPool() {
   let characters = [];
 
   //check the state of the checkboxes//
@@ -196,6 +178,20 @@ function generatePassword(length) {
     characters = characters.concat(symbols);
   }
 
+  return characters;
+}
+
+function generatePassword(length, characters) {
+  //dont't let the user go for more than set up max//
+  if (length > 18) {
+    length = 18;
+    inputLengthEl.value = 18;
+  } else if (length < 1) {
+    length = 1;
+    inputLengthEl.value = 1;
+  }
+  let password = "";
+
   for (let i = 0; i < length; i++) {
     const rando = Math.floor(Math.random() * characters.length);
     password += characters[rando];
@@ -203,4 +199,10 @@ function generatePassword(length) {
 
   console.log(characters);
   return password;
+}
+
+function generateBothPasswords(length) {
+  let charactersPool = getCharactersPool();
+  passwordOutput1El.textContent = generatePassword(length, charactersPool);
+  passwordOutput2El.textContent = generatePassword(length, charactersPool);
 }
